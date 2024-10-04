@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            display: flex;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 40vh;
+            width: 40vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="myChart3"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="myChart2"></canvas>
+    </div>
+    
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['january', 'february', 'march', 'april', 'may', 'jun'],
+        datasets: [{
+          label: '# of Votes',
+          data: [89, 50, 99, -15, 29, 189],
+          borderWidth: 0.8
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: "doughnut",
+        data: {
+            labels: ['Eminem', 'Kanye West', 'Travis Scott' ],
+            datasets: [{
+                label: '# of Votes',
+                data: [119, 180, 99],
+                borderWidth: 1
+            }]
+        },
+        options2: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    })
+
+    const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['I wonder', 'Donda', 'Fe1n','Carnival','God is'],
+            datasets: [{
+                label: '# of Votes',
+                data: [199,399,982,740,1023],
+                borderWidth: 1
+            }]
+        }
+    })
+
+    options3: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+  </script>
+</html>
